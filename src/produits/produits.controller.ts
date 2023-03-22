@@ -36,9 +36,7 @@ export class ProduitsController {
   @Get()
   async findAll() {
     const allProduit = await this.produitsService.findAll();
-    if (allProduit === undefined) {
-      throw new NotFoundException();
-    }
+
     return {
       status: 200,
       message: 'Voici la liste complète des produits.',
